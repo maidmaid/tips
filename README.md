@@ -53,7 +53,7 @@ Organizing Your Business Logic
 
 ### Using a Persistence Layer
 
-- If you're more advanced, you can of course store them under your own namespace in src/.
+- If you're more advanced, you can of course store them under your own namespace in ``src/``.
 
 ### Doctrine Mapping Information
 
