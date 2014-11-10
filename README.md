@@ -99,6 +99,28 @@ Forms
 </form>
 ```
 The exception is a delete form because it's really just one button and so benefits from some of these extra shortcuts.
+- **Handling Form Submits** : We recommend that you use a single action for both rendering the form and handling the form submit. We recommend using ``$form->isSubmitted()`` in the if statement for clarity.
+```php
+public function newAction(Request $request)
+{
+    // build the form ...
+
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($post);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl(
+            'admin_post_show',
+            array('id' => $post->getId())
+        ));
+    }
+
+    // render the template
+}
+```
 
 Internationalization
 --------------------
