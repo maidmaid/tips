@@ -1,5 +1,5 @@
-symfony-best-practices
-======================
+Symfony - resume of best practices
+==================================
 
 Creating the project
 --------------------
