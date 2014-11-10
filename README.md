@@ -41,8 +41,38 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 ```
+```php
+namespace AppBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
+class DefaultController extends Controller
+{
+    /**
+     * @Route("/", name="homepage")
+     */
+    public function indexAction()
+    {
+        // ...
+    }
+}
+```
 - **Template Configuration** : Don't use the ``@Template()`` annotation to configure the template used by the controller.
 - **Using the ParamConverter** : Use the ParamConverter trick to automatically query for Doctrine entities when it's simple and convenient.
+```php
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+
+/**
+ * @Route("/comment/{postSlug}/new", name = "comment_new")
+ * @ParamConverter("post", options={"mapping": {"postSlug": "slug"}})
+ */
+public function newAction(Request $request, Post $post)
+{
+    // ...
+}
+```
 
 Templates
 ---------
