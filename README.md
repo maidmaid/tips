@@ -172,6 +172,21 @@ Security
 - For fine-grained restrictions, define a custom security voter;
 - For restricting access to any object by any user via an admin interface, use the Symfony ACL.
 
+- **The @Security Annotation** : 
+```php
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
+/**
+ * @Route("/new", name="admin_post_new")
+ * @Security("has_role('ROLE_ADMIN')")
+ */
+public function newAction()
+{
+    // ...
+}
+```
+
 Web Assets
 ----------
 
