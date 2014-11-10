@@ -21,7 +21,7 @@ Configuration
 Organizing Your Business Logic
 ------------------------------
 
-- ** Storing Classes Outside of the Bundle?** : The recommended approach of using the ``AppBundle`` directory is for simplicity. If you're advanced enough to know what needs to live in a bundle and what can live outside of one, then feel free to do that.
+- **Storing Classes Outside of the Bundle?** : The recommended approach of using the ``AppBundle`` directory is for simplicity. If you're advanced enough to know what needs to live in a bundle and what can live outside of one, then feel free to do that.
 - **Services: Naming and Format** : The name of your application's services should be as short as possible, ideally just one simple word.
 - **Service Format: YAML** : Use the YAML format to define your own services.
 - **Service: No Class Parameter** : Don't define parameters for the classes of your services.
