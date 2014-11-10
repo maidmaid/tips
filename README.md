@@ -34,6 +34,13 @@ Controllers
 -----------
 
 - Make your controller extend the ``FrameworkBundle`` base Controller and use annotations to configure routing, caching and security whenever possible.
+- **Routing Configuration** : To load routes defined as annotations in your controllers.
+```yml
+# app/config/routing.yml
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+```
 - **Template Configuration** : Don't use the ``@Template()`` annotation to configure the template used by the controller.
 - **Using the ParamConverter** : Use the ParamConverter trick to automatically query for Doctrine entities when it's simple and convenient.
 
@@ -49,14 +56,14 @@ Forms
 
 - Define your forms as PHP classes.
 - **Form Button Configuration** : Add buttons in the templates, not in the form classes or the controllers.
-```
+```Twig
 <form method="POST" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
     <input type="submit" value="Create" class="btn btn-default pull-right" />
 </form>
 ```
 - **Rendering the Form** : Don't use the ``form()`` or ``form_start()`` functions to render the starting and ending form tags.
-```
+```Twig
 <form method="POST" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
 </form>
@@ -91,12 +98,12 @@ Web Assets
 ----------
 
 - Store your assets in the ``web/`` directory.
-```
+```Twig
 <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
 ```
 - Keep in mind that web/ is a public directory and that anything stored here will be publicly accessible. For that reason, you should put your compiled web assets here, but not their source files (e.g. SASS files).
 - **Using Assetic** : Use Assetic to compile, combine and minimize web assets, unless you're comfortable with frontend tools like GruntJS.
-```
+```Twig
 {% stylesheets
     'css/bootstrap.min.css'
     'css/main.css'
