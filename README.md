@@ -6,23 +6,23 @@ Creating the project
 
 ### Application Bundles
 
-- Create only one bundle called AppBundle for your application logic
-- There is no need to prefix the AppBundle with your own vendor (e.g. AcmeAppBundle), because this application bundle is never going to be shared.
+- Create only one bundle called ``AppBundle`` for your application logic
+- There is no need to prefix the ``AppBundle`` with your own vendor (e.g. ``AcmeAppBundle``), because this application bundle is never going to be shared.
 
 Configuration
 -------------
 
 ### Infrastructure-Related Configuration
 
-- Define the infrastructure-related configuration options in the app/config/parameters.yml file.
+- Define the infrastructure-related configuration options in the ``app/config/parameters.yml`` file.
 
 ### Canonical Parameters
 
-- Define all your application's parameters in the app/config/parameters.yml.dist file.
+- Define all your application's parameters in the ``app/config/parameters.yml.dist`` file.
 
 ### Application-Related Configuration
 
-- Define the application behavior related configuration options in the app/config/config.yml file.
+- Define the application behavior related configuration options in the ``app/config/config.yml`` file.
 
 ### Constants vs Configuration Options
 
@@ -37,7 +37,7 @@ Organizing Your Business Logic
 
 ### Storing Classes Outside of the Bundle?
 
-- The recommended approach of using the AppBundle directory is for simplicity. If you're advanced enough to know what needs to live in a bundle and what can live outside of one, then feel free to do that.
+- The recommended approach of using the ``AppBundle`` directory is for simplicity. If you're advanced enough to know what needs to live in a bundle and what can live outside of one, then feel free to do that.
 
 ### Services: Naming and Format
 
@@ -70,11 +70,11 @@ Organizing Your Business Logic
 Controllers
 -----------
 
-- Make your controller extend the FrameworkBundle base Controller and use annotations to configure routing, caching and security whenever possible.
+- Make your controller extend the ``FrameworkBundle`` base Controller and use annotations to configure routing, caching and security whenever possible.
 
 ### Template Configuration
 
-- Don't use the @Template() annotation to configure the template used by the controller.
+- Don't use the ``@Template()`` annotation to configure the template used by the controller.
 
 ### Using the ParamConverter
 
@@ -87,11 +87,11 @@ Templates
 
 ### Template Location
 
-- Store all your application's templates in app/Resources/views/ directory.
+- Store all your application's templates in ``app/Resources/views/`` directory.
 
 ### Twig Extensions
 
-- Define your Twig extensions in the AppBundle/Twig/ directory and configure them using the app/config/services.yml file.
+- Define your Twig extensions in the ``AppBundle/Twig/`` directory and configure them using the ``app/config/services.yml`` file.
 
 Forms
 -----
