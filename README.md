@@ -86,14 +86,14 @@ Forms
 
 - Define your forms as PHP classes.
 - **Form Button Configuration** : Add buttons in the templates, not in the form classes or the controllers.
-```Twig
+```twig
 <form method="POST" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
     <input type="submit" value="Create" class="btn btn-default pull-right" />
 </form>
 ```
 - **Rendering the Form** : Don't use the ``form()`` or ``form_start()`` functions to render the starting and ending form tags.
-```Twig
+```twig
 <form method="POST" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
 </form>
@@ -124,10 +124,36 @@ public function newAction(Request $request)
 
 Internationalization
 --------------------
-
+- Uncomment the following translator configuration option and set your application locale.
+```yml
+# app/config/parameters.yml
+parameters:
+    # ...
+    locale:     en
+```
+```yml
+# app/config/config.yml
+framework:
+    # ...
+    translator: { fallback: "%locale%" }
+```
 - **Translation Source File Format** : Use the XLIFF format for your translation files.
 - **Translation Source File Location** : Store the translation files in the ``app/Resources/translations/`` directory.
 - **Translation Keys** : Always use keys for translations instead of content strings.
+```xml
+<!-- app/Resources/translations/messages.en.xliff -->
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="1">
+                <source>title.post_list</source>
+                <target>Post List</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
+```
 
 Security
 --------
@@ -150,12 +176,12 @@ Web Assets
 ----------
 
 - Store your assets in the ``web/`` directory.
-```Twig
+```twig
 <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
 ```
 - Keep in mind that web/ is a public directory and that anything stored here will be publicly accessible. For that reason, you should put your compiled web assets here, but not their source files (e.g. SASS files).
 - **Using Assetic** : Use Assetic to compile, combine and minimize web assets, unless you're comfortable with frontend tools like GruntJS.
-```Twig
+```twig
 {% stylesheets
     'css/bootstrap.min.css'
     'css/main.css'
