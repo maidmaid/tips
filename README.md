@@ -55,7 +55,7 @@ Forms
     <input type="submit" value="Create" class="btn btn-default pull-right" />
 </form>
 ```
-- **Rendering the Form** : Don't use the form() or form_start() functions to render the starting and ending form tags.
+- **Rendering the Form** : Don't use the ``form()`` or ``form_start()`` functions to render the starting and ending form tags.
 ```
 <form method="POST" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
@@ -76,14 +76,14 @@ Security
 ### Authentication and Firewalls (i.e. Getting the User's Credentials)
 
 - Unless you have two legitimately different authentication systems and users (e.g. form login for the main site and a token system for your API only), we recommend having only one firewall entry with the anonymous key enabled.
-- Use the bcrypt encoder for encoding your users' passwords.
+- Use the ``bcrypt`` encoder for encoding your users' passwords.
 - The source code for our project contains comments that explain each part.
 
 ### Authorization (i.e. Denying Access)
 
-- For protecting broad URL patterns, use access_control;
-- Whenever possible, use the @Security annotation;
-- Check security directly on the security.context service whenever you have a more complex situation.
+- For protecting broad URL patterns, use ``access_control``;
+- Whenever possible, use the ``@Security`` annotation;
+- Check security directly on the ``security.context`` service whenever you have a more complex situation.
 - For fine-grained restrictions, define a custom security voter;
 - For restricting access to any object by any user via an admin interface, use the Symfony ACL.
 
@@ -103,8 +103,6 @@ Web Assets
     filter='cssrewrite' output='css/compiled/all.css' %}
     <link rel="stylesheet" href="{{ asset_url }}" />
 {% endstylesheets %}
-
-{# ... #}
 
 {% javascripts
     'js/jquery.min.js'
