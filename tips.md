@@ -88,3 +88,21 @@ public function indexAction($page)
     </ul>
 </nav>
 ```
+
+Flashbag
+========
+
+```twig
+{# boostrap version #}
+<div class="container">	
+    {% for type, messages in app.session.flashbag.all() %}
+    <div class="alert alert-{{ type }}">
+        <div class="panel-body">
+            {% for message in messages %}
+            <p>{{ message|raw }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+```
