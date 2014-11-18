@@ -75,6 +75,9 @@ public function indexAction($page)
 ```
 ```twig
 {# app/Resources/views/Order/index.html.twig (bootstrap version) #}
+{% for order in orders %}
+    <p>{{ order.name }}</p>
+{% endfor %}
 <nav>
     <ul class="pagination">
         {% for p in 1..pages %}
