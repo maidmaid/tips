@@ -24,8 +24,9 @@ $bundles[] = new CoreSphere\ConsoleBundle\CoreSphereConsoleBundle();
 Access ``app_dev.php`` from domain
 ==================================
 
-Use ``gethostbyname('domain')`` in exit condition in ``web/app_dev.php`` :
+Use ``gethostbyname('domain')`` in exit condition :
 ```php
+// web/app_dev.php
 if (isset($_SERVER['HTTP_CLIENT_IP'])
     || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
     || !(in_array(@$_SERVER['REMOTE_ADDR'], array(
@@ -42,7 +43,6 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 
 ```php
 // src/AppBundle/AppController.php
-
 /**
  * @Route("/orders/{page}", name="orders", requirements={"page" = "\d+"}, defaults={"page" = 1})
  */
