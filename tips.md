@@ -93,7 +93,7 @@ Flashbag
 ========
 ```php
 // AppController.php
-$this->get('session')->getFlashBag()->add('success', 'It's ok!');
+$this->get('session')->getFlashBag()->add('success', 'Ok!');
 ```
 ```twig
 {# boostrap version #}
