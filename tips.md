@@ -4,18 +4,18 @@
 Installation
 ------------
 
-- ``composer.json`` :
+``composer.json`` :
 ```json
 "coresphere/console-bundle": "dev-master"
 ```
-- ``app/config/routing_dev.yml`` :
 ```yml
+# app/config/routing_dev.yml
 _console:
     resource: "@CoreSphereConsoleBundle/Resources/config/routing.yml"
     prefix: /_console
 ```
-- ``app/AppKernel.php``
 ```php
+// app/AppKernel.php
 $bundles[] = new CoreSphere\ConsoleBundle\CoreSphereConsoleBundle();
 ```
 - run ``assets:install``
@@ -35,4 +35,27 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
         gethostbyname('opointzero.dyndns.org'))) 
     || php_sapi_name() === 'cli-server')
 )
+```
+
+[Pagination with ``Paginator`` of Doctrine](http://doctrine-orm.readthedocs.org/en/latest/tutorials/pagination.html)
+===========================================
+
+```php
+// src/AppBundle/AppController.php
+
+/**
+ * @Route("/orders/{page}", name="orders", requirements={"page" = "\d+"}, defaults={"page" = 1})
+ */
+public function indexAction($page)
+{   
+    $ordersSize = 10;
+    $repository = $this->getDoctrine()->getManager()->getRepository('AppBundle:Order');
+    $orders = $repository->findAll($page, $ordersSize);
+    $pages = ceil($orders->count() / $ordersSize);
+    return $this->render($template, array(
+		'orders' => $orders,
+		'pages' => $pages,
+		'page' => $page
+	));
+}
 ```
