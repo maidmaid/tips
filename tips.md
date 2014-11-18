@@ -71,3 +71,15 @@ public function indexAction($page)
 	));
 }
 ```
+```twig
+{# app/Resources/views/Order/index.html.twig (bootstrap version) #}
+<nav>
+    <ul class="pagination">
+        {% for p in 1..pages %}
+        <li class="{% if p == page %}active{% endif %}">
+            <a href="{{ path('oz_tpf_orders', { page: p }) }}">{{ p }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+```
