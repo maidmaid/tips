@@ -42,6 +42,18 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 ===========================================
 
 ```php
+// src/AppBundle/Entity/OrderRepository.php
+public function findAll($page = 1, $pageSize = 20)
+{
+    $query = $this->createQueryBuilder('o')
+		->setFirstResult($pageSize * ($currentPage - 1))
+		->setMaxResults($pageSize);
+	$orders = new Paginator($query, $fetchJoinCollection = true);
+	
+	return $orders;
+}
+```
+```php
 // src/AppBundle/AppController.php
 /**
  * @Route("/orders/{page}", name="orders", requirements={"page" = "\d+"}, defaults={"page" = 1})
@@ -52,7 +64,7 @@ public function indexAction($page)
     $repository = $this->getDoctrine()->getManager()->getRepository('AppBundle:Order');
     $orders = $repository->findAll($page, $ordersSize);
     $pages = ceil($orders->count() / $ordersSize);
-    return $this->render($template, array(
+    return $this->render(':Order:index.html.twig', array(
 		'orders' => $orders,
 		'pages' => $pages,
 		'page' => $page
