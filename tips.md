@@ -68,8 +68,8 @@ public function indexAction($page)
     $pages = ceil($orders->count() / $maxResults);
     return $this->render(':Order:index.html.twig', array(
 		'orders' => $orders,
-		'pages' => $pages,
-		'page' => $page
+		'page' => $page,
+		'pages' => $pages
 	));
 }
 ```
@@ -79,7 +79,7 @@ public function indexAction($page)
     <ul class="pagination">
         {% for p in 1..pages %}
         <li class="{% if p == page %}active{% endif %}">
-            <a href="{{ path('oz_tpf_orders', { page: p }) }}">{{ p }}</a>
+            <a href="{{ path('orders', { page: p }) }}">{{ p }}</a>
         </li>
         {% endfor %}
     </ul>
