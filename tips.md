@@ -91,7 +91,10 @@ public function indexAction($page)
 
 Flashbag
 ========
-
+```php
+// AppController.php
+$this->get('session')->getFlashBag()->add('success', 'It's ok!');
+```
 ```twig
 {# boostrap version #}
 <div class="container">	
