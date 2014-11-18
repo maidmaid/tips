@@ -21,8 +21,8 @@ $bundles[] = new CoreSphere\ConsoleBundle\CoreSphereConsoleBundle();
 - run ``assets:install``
 - enable ``framework.translator`` in ``app/config/config.yml``
 
- Access ``app_dev.php`` from domain
- ==================================
+Access ``app_dev.php`` from domain
+==================================
 
 Use ``gethostbyname('domain')`` in exit condition in ``web/app_dev.php`` :
 ```php
