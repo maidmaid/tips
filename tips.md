@@ -43,14 +43,16 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 
 ```php
 // src/AppBundle/Entity/OrderRepository.php
-public function findAll($page = 1, $pageSize = 20)
+use Doctrine\ORM\Tools\Pagination\Paginator;
+
+public function findAll($page = 1, $maxResults = 20)
 {
     $query = $this->createQueryBuilder('o')
-		->setFirstResult($pageSize * ($currentPage - 1))
-		->setMaxResults($pageSize);
-	$orders = new Paginator($query, $fetchJoinCollection = true);
-	
-	return $orders;
+        ->setFirstResult($maxResults * ($page - 1))
+        ->setMaxResults($maxResults);
+    $orders = new Paginator($query, $fetchJoinCollection = true);
+    
+    return $orders;
 }
 ```
 ```php
@@ -59,11 +61,11 @@ public function findAll($page = 1, $pageSize = 20)
  * @Route("/orders/{page}", name="orders", requirements={"page" = "\d+"}, defaults={"page" = 1})
  */
 public function indexAction($page)
-{   
-    $ordersSize = 10;
+{
+    $maxResults = 20;
     $repository = $this->getDoctrine()->getManager()->getRepository('AppBundle:Order');
-    $orders = $repository->findAll($page, $ordersSize);
-    $pages = ceil($orders->count() / $ordersSize);
+    $orders = $repository->findAll($page, $maxResults);
+    $pages = ceil($orders->count() / $maxResults);
     return $this->render(':Order:index.html.twig', array(
 		'orders' => $orders,
 		'pages' => $pages,
