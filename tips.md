@@ -109,3 +109,12 @@ $this->get('session')->getFlashBag()->add('success', 'Ok!');
     {% endfor %}
 </div>
 ```
+Forms
+=====
+```twig
+<form method="POST" {{ form_enctype(form) }}>
+	{{ form_row(form.start) }}
+    {{ form_row(form.end) }}
+	{{ form_row(form.filter, {'attr': {'class': 'btn-default'}}) }}
+</form>
+```
