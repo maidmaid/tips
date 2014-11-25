@@ -132,7 +132,8 @@ Others
 Use ajax with bootstrap popover
 -------------------------------
 
-```html
+```twig
+{# index.html.twig #}
 <div
 	class="my-popover"
 	data-toggle="popover"
@@ -155,6 +156,7 @@ Use ajax with bootstrap popover
 </script>
 ```
 ```php
+// AppController.php
 /**
  * @Route("/myroute", name="my_route")
  */
