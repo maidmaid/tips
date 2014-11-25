@@ -102,7 +102,7 @@ $this->get('session')->getFlashBag()->add('success', 'Ok!');
     <div class="alert alert-{{ type }}">
         <div class="panel-body">
             {% for message in messages %}
-            <p>{{ message|raw }}</p>
+            <p>{{ message|trans|raw }}</p>
             {% endfor %}
         </div>
     </div>
