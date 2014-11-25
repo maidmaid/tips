@@ -112,11 +112,19 @@ $this->get('session')->getFlashBag()->add('success', 'Ok!');
 Forms
 =====
 ```twig
-{# form_row #}
+{# form_widget: display all fields with errors #}
 <form method="POST" {{ form_enctype(form) }}>
+	{{ form_widget(form) }}
+	<input type="submit" />
+</form>
+```
+```twig
+{# form_row: display field by field #}
+<form method="POST" {{ form_enctype(form) }}>
+	{{ form_errors(form) }}
 	{{ form_row(form.start) }}
 	{{ form_row(form.end) }}
-	{{ form_row(form.filter, {'attr': {'class': 'btn-default'}}) }}
+	<input type="submit" />
 </form>
 ```
 ```twig
