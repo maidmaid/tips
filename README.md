@@ -93,11 +93,6 @@ Forms
 </form>
 ```
 - **Rendering the Form** : Don't use the ``form()`` or ``form_start()`` functions to render the starting and ending form tags.
-```twig
-<form method="POST" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-</form>
-```
 The exception is a delete form because it's really just one button and so benefits from some of these extra shortcuts.
 - **Handling Form Submits** : We recommend that you use a single action for both rendering the form and handling the form submit. We recommend using ``$form->isSubmitted()`` in the if statement for clarity.
 ```php
