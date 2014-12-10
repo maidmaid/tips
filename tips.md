@@ -134,28 +134,28 @@ Forms
 {{ form.start.vars.data|date('Y-m-d H:m:s') }}	-> (string) 2014-11-25 15:13:00
 ```
 
-Doctirne: Many-To-Many, Unidirectional, with attributes
-======
+Doctrine: Many-To-Many, Unidirectional, with attributes
+=======================================================
 
 ```php
 class A
 {
-	/**
-	 * @var AB[]
-	 * 
-	 * @ORM\OneToMany(targetEntity="AB", mappedBy="a")
-	 */
-	private $abs;
+    /**
+     * @var AB[]
+     * 
+     * @ORM\OneToMany(targetEntity="AB", mappedBy="a")
+     */
+    private $abs;
 }
 
 class B
 {
-	/**
-	 * @var AB[]
-	 * 
-	 * @ORM\OneToMany(targetEntity="AB", mappedBy="b")
-	 */
-	private $abs;
+    /**
+     * @var AB[]
+     * 
+     * @ORM\OneToMany(targetEntity="AB", mappedBy="b")
+     */
+    private $abs;
 }
 
 class AB
