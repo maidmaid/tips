@@ -147,7 +147,8 @@ class A
      */
     private $abs;
 }
-
+```
+```php
 class B
 {
     /**
@@ -157,7 +158,8 @@ class B
      */
     private $abs;
 }
-
+```
+```php
 class AB
 {
     /**
