@@ -178,6 +178,20 @@ class AB
 }
 ```
 
+For persistance in A and B :
+
+```php
+class A
+{
+    public function addAB(AB $ab)
+    {
+    	//...
+        $ab->setA($this);
+		//...
+    }
+}
+```
+
 Others
 ======
 
