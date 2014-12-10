@@ -134,6 +134,48 @@ Forms
 {{ form.start.vars.data|date('Y-m-d H:m:s') }}	-> (string) 2014-11-25 15:13:00
 ```
 
+Doctirne: Many-To-Many, Unidirectional, with attributes
+======
+
+```php
+class A
+{
+	/**
+	 * @var AB[]
+	 * 
+	 * @ORM\OneToMany(targetEntity="AB", mappedBy="a")
+	 */
+	private $abs;
+}
+
+class B
+{
+	/**
+	 * @var AB[]
+	 * 
+	 * @ORM\OneToMany(targetEntity="AB", mappedBy="b")
+	 */
+	private $abs;
+}
+
+class AB
+{
+    /**
+     * @var A
+     *
+     * @ORM\ManyToOne(targetEntity="A", inversedBy="abs")
+     */
+    private $a;
+
+    /**
+     * @var B
+     *
+     * @ORM\ManyToOne(targetEntity="B", inversedBy="abs")
+     */
+    private $b;
+}
+```
+
 Others
 ======
 
