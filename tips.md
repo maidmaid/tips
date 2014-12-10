@@ -143,7 +143,7 @@ class A
     /**
      * @var AB[]
      * 
-     * @ORM\OneToMany(targetEntity="AB", mappedBy="a")
+     * @ORM\OneToMany(targetEntity="AB", mappedBy="a", cascade={"all"})
      */
     private $abs;
 }
@@ -154,7 +154,7 @@ class B
     /**
      * @var AB[]
      * 
-     * @ORM\OneToMany(targetEntity="AB", mappedBy="b")
+     * @ORM\OneToMany(targetEntity="AB", mappedBy="b", cascade={"all"})
      */
     private $abs;
 }
