@@ -178,7 +178,23 @@ class AB
 }
 ```
 
-For persistance in A and B :
+### Problem with bidirectionnel persistance
+
+#### Problem 1
+
+```php
+$a->addAB($ab);
+$em->persist($a);
+$em->flush();
+```
+
+Table AB
+
+| id | a_id   | b_id |
+| -- | ------ | ---- |
+| 1  | `NULL` | 1    |
+
+#### Resolution 1
 
 ```php
 class A
