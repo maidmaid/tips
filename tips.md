@@ -230,7 +230,7 @@ class AB
 	public function setA(A $a)
     {
         //...
-        $ab->addAB($this);
+        $a->addAB($this);
         //...
     }
 }
