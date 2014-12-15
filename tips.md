@@ -191,7 +191,7 @@ $em->flush();
 Table AB
 
 | id | a_id   | b_id |
-| -- | ------ | ---- |
+|----|--------|------|
 | 1  | `NULL` | 1    |
 
 #### Resolution 1
@@ -204,6 +204,34 @@ class A
     	//...
         $ab->setA($this);
 		//...
+    }
+}
+```
+
+#### Problem 2
+
+```php
+$ab->setA($a);
+$em->persist($a);
+$em->flush();
+```
+
+Table AB
+
+| id     | a_id   | b_id   |
+|--------|--------|--------|
+| `NULL` | `NULL` | `NULL` |
+
+#### Resolution 2
+
+```php
+class AB
+{
+	public function setA(A $a)
+    {
+        //...
+        $ab->addAB($this);
+        //...
     }
 }
 ```
