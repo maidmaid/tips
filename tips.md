@@ -194,7 +194,7 @@ Table AB
 |----|--------|------|
 | 1  | `NULL` | 1    |
 
-#### Resolution 1
+Resolution :
 
 ```php
 class A
@@ -222,7 +222,7 @@ Table AB
 |--------|--------|--------|
 | `NULL` | `NULL` | `NULL` |
 
-#### Resolution 2
+Resolution 2 :
 
 ```php
 class AB
