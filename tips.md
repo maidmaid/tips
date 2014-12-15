@@ -222,7 +222,7 @@ Table AB
 |--------|--------|--------|
 | `NULL` | `NULL` | `NULL` |
 
-Resolution 2 :
+Resolution :
 
 ```php
 class AB
