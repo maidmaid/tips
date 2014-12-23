@@ -122,6 +122,7 @@ Forms
 {# form_row: display field by field #}
 <form method="POST" {{ form_enctype(form) }}>
 	{{ form_errors(form) }}
+	{{ form_row(form._token) }}
 	{{ form_row(form.start) }}
 	{{ form_row(form.end) }}
 	<input type="submit" />
