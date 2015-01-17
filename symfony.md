@@ -1,8 +1,12 @@
-[ConsoleBundle](https://github.com/CoreSphere/ConsoleBundle)
-===============
+Best Practice
+=============
 
-Installation
-------------
+[link](symfony-best-practice.md)
+
+ConsoleBundle(https://github.com/CoreSphere/ConsoleBundle)
+=============
+
+[CoreSphere/ConsoleBundle](https://github.com/CoreSphere/ConsoleBundle)
 
 ``composer.json`` :
 ```json
@@ -38,8 +42,10 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 )
 ```
 
-[Pagination with ``Paginator`` of Doctrine](http://doctrine-orm.readthedocs.org/en/latest/tutorials/pagination.html)
-===========================================
+Pagination with ``Paginator`` of Doctrine
+=========================================
+
+[Doc](http://doctrine-orm.readthedocs.org/en/latest/tutorials/pagination.html)
 
 ```php
 // src/AppBundle/Entity/OrderRepository.php
@@ -91,6 +97,7 @@ public function indexAction($page)
 
 Flashbag
 ========
+
 ```php
 // AppController.php
 $this->get('session')->getFlashBag()->add('success', 'Ok!');
@@ -109,8 +116,10 @@ $this->get('session')->getFlashBag()->add('success', 'Ok!');
     {% endfor %}
 </div>
 ```
+
 Forms
 =====
+
 ```twig
 {# form_widget: display all fields with errors #}
 <form method="POST" {{ form_enctype(form) }}>
