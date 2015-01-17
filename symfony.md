@@ -1,12 +1,10 @@
 Best Practice
 =============
 
-[link](symfony-best-practice.md)
+[symfony-best-practice.md](symfony-best-practice.md)
 
-ConsoleBundle(https://github.com/CoreSphere/ConsoleBundle)
+ConsoleBundle
 =============
-
-[CoreSphere/ConsoleBundle](https://github.com/CoreSphere/ConsoleBundle)
 
 ``composer.json`` :
 ```json
@@ -25,6 +23,8 @@ $bundles[] = new CoreSphere\ConsoleBundle\CoreSphereConsoleBundle();
 - run ``assets:install``
 - enable ``framework.translator`` in ``app/config/config.yml``
 
+[CoreSphere/ConsoleBundle](https://github.com/CoreSphere/ConsoleBundle)
+
 Access ``app_dev.php`` from domain
 ==================================
 
@@ -42,10 +42,8 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 )
 ```
 
-Pagination with ``Paginator`` of Doctrine
-=========================================
-
-[Doc](http://doctrine-orm.readthedocs.org/en/latest/tutorials/pagination.html)
+Pagination with Doctrine
+========================
 
 ```php
 // src/AppBundle/Entity/OrderRepository.php
@@ -95,27 +93,7 @@ public function indexAction($page)
 </nav>
 ```
 
-Flashbag
-========
-
-```php
-// AppController.php
-$this->get('session')->getFlashBag()->add('success', 'Ok!');
-```
-```twig
-{# boostrap version #}
-<div class="container">	
-    {% for type, messages in app.session.flashbag.all() %}
-    <div class="alert alert-{{ type }}">
-        <div class="panel-body">
-            {% for message in messages %}
-            <p>{{ message|trans|raw }}</p>
-            {% endfor %}
-        </div>
-    </div>
-    {% endfor %}
-</div>
-```
+[Doc](http://doctrine-orm.readthedocs.org/en/latest/tutorials/pagination.html)
 
 Forms
 =====
