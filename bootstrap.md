@@ -1,5 +1,5 @@
-Use ajax with bootstrap popover
-===============================
+Use ajax in Popover
+===================
 
 ```twig
 {# index.html.twig #}
