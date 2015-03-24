@@ -156,6 +156,8 @@ public function indexAction($page)
 Pagination with big data
 ------------------------
 
+Queries on 10'000 main entities and 300'000 joined sub-entities :
+
 ![Queries on 10'000 main entities and 300'000 joined sub-entities](/img/doctrine/paginator-with-big-data.png)
 
 - *Query 2* : Perform a Count query using DISTINCT keyword.
