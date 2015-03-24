@@ -158,6 +158,14 @@ Pagination with big data
 
 ![alt tag](/img/doctrine/paginator-with-big-data.png)
 
+- *Query 2* : Perform a Count query using DISTINCT keyword.
+- *Query 4* : Perform a Limit Subquery with DISTINCT to find all ids of the entity in from on the current page.
+- *Query 5* : Perform a WHERE IN query to get all results for the current page.
+
+[Doc](http://doctrine-orm.readthedocs.org/en/latest/tutorials/pagination.html)
+
+Solution : use only *one-to-one* joins with :
+ 
 ```php
-$details = new Paginator($query, $fetchJoinCollection = false);
+$entities = new Paginator($query, $fetchJoinCollection = false);
 ```
