@@ -166,7 +166,7 @@ Queries on 10'000 main entities and 300'000 joined sub-entities :
 
 [Doc](http://doctrine-orm.readthedocs.org/en/latest/tutorials/pagination.html)
 
-Solution : use only *one-to-one* joins with :
+_Solution_ : join only one-to-one entites and use ``Paginator`` without ``$fetchJoinCollection`` :
  
 ```php
 $entities = new Paginator($query, $fetchJoinCollection = false);
