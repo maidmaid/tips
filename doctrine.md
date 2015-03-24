@@ -152,3 +152,12 @@ public function indexAction($page)
 ```
 
 [Doc](http://doctrine-orm.readthedocs.org/en/latest/tutorials/pagination.html)
+
+Pagination with big data
+------------------------
+
+![alt tag](/img/doctrine/paginator-with-big-data.png)
+
+```php
+$details = new Paginator($query, $fetchJoinCollection = false);
+```
