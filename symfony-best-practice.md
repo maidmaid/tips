@@ -89,10 +89,10 @@ Forms
 - Define your forms as PHP classes.
 - **Form Button Configuration** : Add buttons in the templates, not in the form classes or the controllers.
 ```twig
-<form method="POST" {{ form_enctype(form) }}>
+{{ form_start(form) }}
     {{ form_widget(form) }}
     <input type="submit" value="Create" class="btn btn-default pull-right" />
-</form>
+{{ form_end(form) }}
 ```
 - **Rendering the Form** : Don't use the ``form()`` or ``form_start()`` functions to render the starting and ending form tags.
 The exception is a delete form because it's really just one button and so benefits from some of these extra shortcuts.
@@ -110,7 +110,7 @@ public function newAction(Request $request)
         $em->flush();
 
         return $this->redirect($this->generateUrl(
-            'admin_post_show',
+        	'admin_post_show',
             array('id' => $post->getId())
         ));
     }
