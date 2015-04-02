@@ -118,9 +118,11 @@ public function newAction(Request $request)
     // render the template
 }
 ```
+- **Custom Form Field Types** : Add the app_ prefix to your custom form field types to avoid collisions.
 
 Internationalization
 --------------------
+
 - Uncomment the following translator configuration option and set your application locale.
 ```yml
 # app/config/parameters.yml
