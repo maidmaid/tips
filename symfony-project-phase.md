@@ -31,4 +31,3 @@ Create entities
 - Generate basics entities by running ``php app/console doctrine:generate:entity``
 - Delete useless comments in created repositories
 - Add joins, generate setter/getter by running ``php app/console doctrine:generate:entities`` and add ``cascade`` option
-- 
