@@ -80,7 +80,7 @@ Templates
 ---------
 
 - Use Twig templating format for your templates.
-- **Template Location** : Store all your application's templates in ``app/Resources/views/`` directory.
+- **Template Location** : Store all your application's templates in ``app/Resources/views/`` directory. Use lowercased snake_case for directory and template names.
 - **Twig Extensions** : Define your Twig extensions in the ``AppBundle/Twig/`` directory and configure them using the ``app/config/services.yml`` file.
 
 Forms
