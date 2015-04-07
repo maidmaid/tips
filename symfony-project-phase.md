@@ -19,6 +19,14 @@ Import project
 
 > git commit -m "import symfony project"
 
+Configure project
+-----------------
+
+- Edit template params in ``parameters.yml.dist``
+- Configure doctrine with [naming strategy](http://doctrine-orm.readthedocs.org/en/latest/reference/namingstrategy.html) to ``underscore``
+
+> git commit -m "update configuration"
+
 Import assets
 -------------
 
@@ -45,11 +53,3 @@ Create entities
 - Add [fixtures doctrines](http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html) and [faker](http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html). Create [fixture class](http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html#using-the-container-in-the-fixtures).
 
 > git commit -m "add fixtures doctrine"
-
-Configure project
------------------
-
-- Edit template params in ``parameters.yml.dist``
-- Configure doctrine with [naming strategy](http://doctrine-orm.readthedocs.org/en/latest/reference/namingstrategy.html) to ``underscore``
-
-> git commit -m "update configuration"
