@@ -34,9 +34,12 @@ Create entities
 - Add ``nullable`` annotation option and/or ``default`` annotation option. Add default value in constructor.
 - Add [validation constraints](http://symfony.com/doc/current/reference/constraints.html)
 - Commit "add entities"
+- Add [extensions doctrine](https://github.com/stof/StofDoctrineExtensionsBundle) and use [annotations](https://github.com/Atlantic18/DoctrineExtensions/tree/master/doc/).
+- Commit "add extensions doctrine"
+- Add [fixtures doctrines](http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html) and [faker](http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html). Create [fixture class](http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html#using-the-container-in-the-fixtures).
 
 Configure project
 -----------------
 
 - Edit template params in ``parameters.yml.dist``
-- Configure doctrine with [naming strategie](http://doctrine-orm.readthedocs.org/en/latest/reference/namingstrategy.html) to ``underscore``
+- Configure doctrine with [naming strategy](http://doctrine-orm.readthedocs.org/en/latest/reference/namingstrategy.html) to ``underscore``
