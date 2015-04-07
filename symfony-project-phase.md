@@ -57,4 +57,4 @@ Create entities
 Create working base
 -------------------
 
-- Generate [CRUD Controllers](http://symfony.com/doc/current/bundles/SensioGeneratorBundle/commands/generate_doctrine_crud.html) by running ``php app/console doctrine:generate:crud`` with [this overrided skeleton](...).
+- Generate [CRUD files](http://symfony.com/doc/current/bundles/SensioGeneratorBundle/commands/generate_doctrine_crud.html) (controllers, forms, views) by running ``php app/console doctrine:generate:crud`` with [this overrided skeleton](...).
