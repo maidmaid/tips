@@ -59,3 +59,5 @@ Create working base
 
 - Generate [CRUD files](http://symfony.com/doc/current/bundles/SensioGeneratorBundle/commands/generate_doctrine_crud.html) (controllers, forms, views) by running ``php app/console doctrine:generate:crud`` with [this overrided skeleton](...).
 - Add static pages as ``/contact`` or ``/info``.
+
+> ``git commit -m "add working base"``
