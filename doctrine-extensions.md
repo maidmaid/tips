@@ -1,9 +1,17 @@
 Tips for doctrine extensions
 ============================
 
-Uploadable template
+Uploadable example
 -------------------
-
+```
+# app/config/config.yml
+stof_doctrine_extensions:
+    orm:
+        default:
+            uploadable: true
+    uploadable:
+        default_file_path: %kernel.root_dir%/../web/uploads
+```
 ```php
 // src/AppBundle/Entity/Document.php
 use Doctrine\ORM\Mapping as ORM;
@@ -53,15 +61,6 @@ class Document
         return null === $this->fileName ? null : 'uploads/'.$this->fileName;
     }
 }
-```
-```
-# app/config/config.yml
-stof_doctrine_extensions:
-    orm:
-        default:
-            uploadable: true
-    uploadable:
-        default_file_path: %kernel.root_dir%/../web/uploads
 ```
 ```php
 // src/AppBundle/Form/DocumentType.php 
