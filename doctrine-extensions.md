@@ -96,3 +96,5 @@ public function editAction(Request $request, Document $document)
     }
     //...
 ```
+[Doc uploadable extension](https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/uploadable.md)
+[Doc stof doctrine extensions](https://github.com/stof/StofDoctrineExtensionsBundle/blob/master/Resources/doc/index.rst)
