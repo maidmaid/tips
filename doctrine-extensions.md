@@ -62,6 +62,13 @@ class Document
     }
 }
 ```
+```twig
+{# app/Resources/views/document/show.html.twig #}
+<img src="{{ asset(document.webPath) }}" alt=""/>
+
+{# app/Resources/views/document/edit.html.twig #}
+<img src="{{ asset(form.vars.data.webPath) }}" alt=""/>
+```
 ```php
 // src/AppBundle/Form/DocumentType.php 
  public function buildForm(FormBuilderInterface $builder, array $options)
