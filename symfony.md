@@ -1,8 +1,3 @@
-Best Practice
-=============
-
-[symfony-best-practice.md](symfony-best-practice.md)
-
 ConsoleBundle
 =============
 
