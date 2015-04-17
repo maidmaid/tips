@@ -3,6 +3,7 @@ Use ajax in Popover
 
 ```twig
 {# index.html.twig #}
+
 <div
 	class="my-popover"
 	data-toggle="popover"
@@ -13,6 +14,7 @@ Use ajax in Popover
 	data-title="..."
 	data-url="{{ path('my_route') }}"
 >Click-me!</div>
+
 <script>
 	$('.my-popover').click(function(){
 		var $e = $(this);
@@ -27,6 +29,7 @@ Use ajax in Popover
 
 ```php
 // AppController.php
+
 /**
  * @Route("/myroute", name="my_route")
  */
@@ -35,7 +38,9 @@ public function myRouteAction(Request $request)
 	if(!$request->isXmlHttpRequest()) {
 		throw $this->createAccessDeniedException();
 	}
+
 	//...
+
     return $this->render('::popover.html.twig');
 }
 ```
