@@ -1,7 +1,7 @@
 Uploadable example
 ==================
 
-```
+```yml
 # app/config/config.yml
 
 stof_doctrine_extensions:
