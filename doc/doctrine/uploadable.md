@@ -3,6 +3,7 @@ Uploadable example
 
 ```
 # app/config/config.yml
+
 stof_doctrine_extensions:
     orm:
         default:
@@ -13,13 +14,14 @@ stof_doctrine_extensions:
 
 ```php
 // src/AppBundle/Entity/Document.php
+
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Table(name="document")
- * @ORM\Entity(repositoryClass="Dl\Lessus\AppBundle\Entity\DocumentRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\DocumentRepository")
  * @Gedmo\Uploadable(filenameGenerator="SHA1", allowOverwrite=true, appendNumber=true)
  */
 class Document
@@ -72,6 +74,7 @@ class Document
 
 ```php
 // src/AppBundle/Form/DocumentType.php 
+
  public function buildForm(FormBuilderInterface $builder, array $options)
  {
       $builder
@@ -85,6 +88,7 @@ class Document
 
 ```php
 // src/AppBundle/Controller/DocumentController.php
+
 public function editAction(Request $request, Document $document)
 {
     //...
