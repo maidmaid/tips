@@ -1,5 +1,5 @@
-Symfony - best practices
-========================
+Symfony best practices
+======================
 
 [Official doc](http://symfony.com/doc/current/best_practices)
 

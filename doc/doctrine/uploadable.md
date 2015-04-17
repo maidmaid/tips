@@ -1,8 +1,6 @@
-Tips for doctrine extensions
-============================
-
 Uploadable example
--------------------
+==================
+
 ```
 # app/config/config.yml
 stof_doctrine_extensions:
@@ -12,6 +10,7 @@ stof_doctrine_extensions:
     uploadable:
         default_file_path: %kernel.root_dir%/../web/uploads
 ```
+
 ```php
 // src/AppBundle/Entity/Document.php
 use Doctrine\ORM\Mapping as ORM;
@@ -62,6 +61,7 @@ class Document
     }
 }
 ```
+
 ```twig
 {# app/Resources/views/document/show.html.twig #}
 <img src="{{ asset(document.webPath) }}" alt=""/>
@@ -69,6 +69,7 @@ class Document
 {# app/Resources/views/document/edit.html.twig #}
 <img src="{{ asset(form.vars.data.webPath) }}" alt=""/>
 ```
+
 ```php
 // src/AppBundle/Form/DocumentType.php 
  public function buildForm(FormBuilderInterface $builder, array $options)
@@ -80,7 +81,8 @@ class Document
           ))
       ;
  }
- ```
+```
+
 ```php
 // src/AppBundle/Controller/DocumentController.php
 public function editAction(Request $request, Document $document)
@@ -96,6 +98,7 @@ public function editAction(Request $request, Document $document)
     }
     //...
 ```
+
 - [Doc uploadable extension](https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/uploadable.md)
 - [Doc stof doctrine extensions](https://github.com/stof/StofDoctrineExtensionsBundle/blob/master/Resources/doc/index.rst)
 - [Doc symfony file uploads](http://symfony.com/doc/current/cookbook/doctrine/file_uploads.html)

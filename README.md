@@ -1,7 +1,21 @@
 # Tips by maidmaid !
 
-- Symfony: [general](symfony.md), [best practices](symfony-best-practice.md), [project phases](symfony-project-phase.md)
-- Doctrine : [general](doctrine.md), [extensions](doctrine-extensions.md)
-- [Twig](twig.md)
-- [Bootstrap](bootstrap.md)
-- [Git](git.md)
+- Symfony
+  - [Access by domain](doc/symfony/access-by-domain.md)
+  - [Console bundle](doc/symfony/console-bundle.md)
+  - [Form](doc/symfony/form.md)
+  - [Best practices](doc/symfony/symfony-best-practice.md)
+  - [Project phases](doc/symfony/symfony-project-phase.md)
+- Doctrine
+  - [Many-To-Many, Unidirectional, with attributes](doc/doctrine/many-to-many.md)
+  - [Pagination](doc/doctrine/pagination.md)
+  - [Pagination with big data](doc/doctrine/pagination-big-data.md)
+  - [Uploadable extension](doc/doctrine/uploadable.md)
+- Twig
+  - [Loop with rows](doc/twig/loop-with-rows.md)
+- Bootstrap
+  - [Symfony flashbag](doc/bootstrap/flashbag-symfony.md)
+  - [Use ajax in popover](doc/bootstrap/use-ajax-in-popover.md)
+- Git
+  - [Add tracking in existing sources](doc/git/existing-sources.md)
+  - [Add tag](doc/git/tag.md)
