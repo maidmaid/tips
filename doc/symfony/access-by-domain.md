@@ -1,5 +1,5 @@
-Access ``app_dev.php`` from domain
-==================================
+Access app_dev.php from specific domain
+=======================================
 
 Use ``gethostbyname('domain')`` in exit condition :
 
