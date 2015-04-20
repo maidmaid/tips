@@ -5,16 +5,18 @@ Pagination
 // src/AppBundle/Entity/OrderRepository.php
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
-public function findAll($page = 1, $maxResults = 20)
+public function findAllByPage($page = 1, $maxResults = 20)
 {
     $query = $this->createQueryBuilder('o')
         ->setFirstResult($maxResults * ($page - 1))
         ->setMaxResults($maxResults);
+
     $orders = new Paginator($query, $fetchJoinCollection = true);
     
     return $orders;
 }
 ```
+
 ```php
 // src/AppBundle/AppController.php
 /**
@@ -22,10 +24,12 @@ public function findAll($page = 1, $maxResults = 20)
  */
 public function indexAction($page)
 {
-    $maxResults = 20;
     $repository = $this->getDoctrine()->getManager()->getRepository('AppBundle:Order');
-    $orders = $repository->findAll($page, $maxResults);
+    $maxResults = 20;
+    
+    $orders = $repository->findAllByPage($page, $maxResults);
     $pages = ceil($orders->count() / $maxResults);
+    
     return $this->render(':Order:index.html.twig', array(
 		'orders' => $orders,
 		'page' => $page,
@@ -33,6 +37,7 @@ public function indexAction($page)
 	));
 }
 ```
+
 ```twig
 {# app/Resources/views/Order/index.html.twig (bootstrap version) #}
 {% for order in orders %}
