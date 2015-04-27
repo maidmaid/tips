@@ -1,6 +1,8 @@
 Log
 ===
 
-Cool log : ``git log  --oneline --graph --decorate --all``
+```sh 
+$ git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --all
+```
 
-Alias : ``git config --global alias.lg "log  --oneline --graph --decorate --all"``
+Source : https://coderwall.com/p/euwpig/a-better-git-log
