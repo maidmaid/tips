@@ -19,3 +19,4 @@
 - Git
   - [Add tracking in existing sources](doc/git/existing-sources.md)
   - [Add tag](doc/git/tag.md)
+  - [Log](doc/git/log.md)
