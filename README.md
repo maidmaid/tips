@@ -4,6 +4,7 @@
   - [Access by domain](doc/symfony/access-by-domain.md)
   - [Console bundle](doc/symfony/console-bundle.md)
   - [Form](doc/symfony/form.md)
+  - [My WebTestCase for functional tests](doc/symfony/WebTestCase.php)
   - [Best practices](doc/symfony/symfony-best-practice.md)
   - [Project phases](doc/symfony/symfony-project-phase.md)
 - Doctrine
