@@ -1,5 +1,5 @@
-Centered element
-================
+Center V and H an element
+=========================
 
 ```css
 .center
