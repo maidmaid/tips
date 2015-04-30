@@ -5,6 +5,7 @@
   - [Console bundle](doc/symfony/console-bundle.md)
   - [Form](doc/symfony/form.md)
   - [My WebTestCase for functional tests](doc/symfony/WebTestCase.php)
+  - [Test ajax request](doc/symfony/test-ajax.md)
   - [Best practices](doc/symfony/symfony-best-practice.md)
   - [Project phases](doc/symfony/symfony-project-phase.md)
 - Doctrine
