@@ -6,8 +6,8 @@
   - [Form](doc/symfony/form.md)
   - [My WebTestCase for functional tests](doc/symfony/WebTestCase.php)
   - [Test ajax request](doc/symfony/test-ajax.md)
-  - [Best practices](doc/symfony/symfony-best-practice.md)
-  - [Project phases](doc/symfony/symfony-project-phase.md)
+  - [Best practices](doc/symfony/best-practice.md)
+  - [Project phases](doc/symfony/project-phase.md)
 - Doctrine
   - [Many-To-Many, Unidirectional, with attributes](doc/doctrine/many-to-many.md)
   - [Pagination](doc/doctrine/pagination.md)
