@@ -22,5 +22,6 @@
   - [Add tracking in existing sources](doc/git/existing-sources.md)
   - [Add tag](doc/git/tag.md)
   - [Log](doc/git/log.md)
+  - [Diff](doc/git/diff.md)
 - CSS
   - [Center V and H an element](doc/css/center.md)
