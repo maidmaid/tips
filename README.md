@@ -1,5 +1,7 @@
 # Tips by maidmaid !
 
+- PHP
+  - [Logical operators](doc/php/logical-operators.md)
 - Symfony
   - [Access by domain](doc/symfony/access-by-domain.md)
   - [Console bundle](doc/symfony/console-bundle.md)
