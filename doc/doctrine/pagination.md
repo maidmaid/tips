@@ -12,7 +12,7 @@ public function findAllByPage($page = 1, $maxResults = 20)
     // Use paginator if limit is defined
     if ($page !== null && $maxResults !== null) {
 	    $qb->setFirstResult($maxResults * ($page - 1))->setMaxResults($maxResults);
-	    $entities = new Paginator($query, $fetchJoinCollection = false);
+	    $entities = new Paginator($qb->getQuery(), $fetchJoinCollection = false);
 	} else {
 	    $entities = $qb->getQuery()->getResult();
 	}
