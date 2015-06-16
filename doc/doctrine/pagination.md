@@ -42,6 +42,16 @@ public function indexAction($page)
 }
 ```
 
+```php
+// examples of findAllByPage()
+$entities = $repository->findAllByPage(); 			// 20 entities of page 1
+$entities = $repository->findAllByPage(1); 			// 20 entities of page 1
+$entities = $repository->findAllByPage(2);			// 20 entities of page 2
+$entities = $repository->findAllByPage(1, 10);		// 10 entities of page 1
+$entities = $repository->findAllByPage(2, 10);		// 20 entities of page 2
+$entities = $repository->findAllByPage(null, null);	// all entities
+```
+
 ```twig
 {# app/Resources/views/Entity/index.html.twig (bootstrap version) #}
 {% for entity in entities %}
