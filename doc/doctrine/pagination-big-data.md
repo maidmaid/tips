@@ -3,7 +3,7 @@ Pagination with big data
 
 Queries on 10'000 main entities and 300'000 joined sub-entities :
 
-![Queries on 10'000 main entities and 300'000 joined sub-entities](doc/doctrine/paginator-with-big-data.png)
+![Queries on 10'000 main entities and 300'000 joined sub-entities](paginator-with-big-data.png)
 
 - *Query 2* : Perform a Count query using DISTINCT keyword.
 - *Query 4* : Perform a Limit Subquery with DISTINCT to find all ids of the entity in from on the current page.
