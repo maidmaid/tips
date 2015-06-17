@@ -11,8 +11,15 @@ Queries on 10'000 main entities and 300'000 joined sub-entities :
 
 [Doc](http://doctrine-orm.readthedocs.org/en/latest/tutorials/pagination.html)
 
-_Solution_ : join only one-to-one entites and use ``Paginator`` without ``$fetchJoinCollection`` :
+__Solution 1__ : join only one-to-one entites and use ``Paginator`` with ``$fetchJoinCollection`` defined to ``false`` :
  
 ```php
 $entities = new Paginator($query, $fetchJoinCollection = false);
+```
+
+__Solution 2__ : don't use output walkers in paginator instance :
+
+```php
+$entities = new Paginator($query, $fetchJoinCollection = true);
+$entities->setUseOutputWalkers(false);
 ```
