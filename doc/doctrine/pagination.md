@@ -5,17 +5,17 @@ Pagination
 // src/AppBundle/Entity/OrderRepository.php
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
-public function findAllByPage($page = 1, $maxResults = 20)
+public function findAllByPage($page = null, $maxResults = 20)
 {
     $qb = $this->createQueryBuilder('e');
     
-    // Use paginator if limit is defined
-    if ($page !== null && $maxResults !== null) {
-	    $qb->setFirstResult($maxResults * ($page - 1))->setMaxResults($maxResults);
-	    $entities = new Paginator($qb->getQuery(), $fetchJoinCollection = false);
-	} else {
-	    $entities = $qb->getQuery()->getResult();
-	}
+	if ($page) {
+        $qb->setFirstResult($maxResults * ($page - 1))->setMaxResults($maxResults);
+        $entities = new Paginator($qb, $fetchJoinCollection = true);
+        // $entities->setUseOutputWalkers(false); // better perfs if big data
+    } else {
+        $entities = $qb->getQuery()->getResult();
+    }
     
     return $entities;
 }
@@ -28,10 +28,9 @@ public function findAllByPage($page = 1, $maxResults = 20)
  */
 public function indexAction($page)
 {
-    $repository = $this->getDoctrine()->getManager()->getRepository('AppBundle:Entity');
     $maxResults = 20;
     
-    $entities = $repository->findAllByPage($page, $maxResults);
+    $entities = $this->getDoctrine()->getManager()->getRepository('AppBundle:Entity')->findAllByPage($page, $maxResults);
     $pages = ceil($orders->count() / $maxResults);
     
     return $this->render(':Entity:index.html.twig', array(
@@ -44,12 +43,11 @@ public function indexAction($page)
 
 ```php
 // examples of findAllByPage()
-$entities = $repository->findAllByPage(); 			// 20 entities of page 1
+$entities = $repository->findAllByPage(); 			// all entities
 $entities = $repository->findAllByPage(1); 			// 20 entities of page 1
 $entities = $repository->findAllByPage(2);			// 20 entities of page 2
 $entities = $repository->findAllByPage(1, 10);		// 10 entities of page 1
-$entities = $repository->findAllByPage(2, 10);		// 20 entities of page 2
-$entities = $repository->findAllByPage(null, null);	// all entities
+$entities = $repository->findAllByPage(2, 10);		// 10 entities of page 2
 ```
 
 ```twig
