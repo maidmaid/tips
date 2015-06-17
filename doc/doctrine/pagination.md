@@ -42,12 +42,12 @@ public function indexAction($page)
 ```
 
 ```php
-// examples of findAllByPage()
-$entities = $repository->findAllByPage(); 			// all entities
-$entities = $repository->findAllByPage(1); 			// 20 entities of page 1
-$entities = $repository->findAllByPage(2);			// 20 entities of page 2
-$entities = $repository->findAllByPage(1, 10);		// 10 entities of page 1
-$entities = $repository->findAllByPage(2, 10);		// 10 entities of page 2
+// examples of findAllByPage($page = null, $maxResults = 20)
+$entities = $repository->findAllByPage(); 		// all entities
+$entities = $repository->findAllByPage(1); 		// 20 entities of page 1
+$entities = $repository->findAllByPage(2);		// 20 entities of page 2
+$entities = $repository->findAllByPage(1, 10);	// 10 entities of page 1
+$entities = $repository->findAllByPage(2, 10);	// 10 entities of page 2
 ```
 
 ```twig
