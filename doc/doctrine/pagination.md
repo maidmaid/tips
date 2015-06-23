@@ -11,13 +11,11 @@ public function findAllByPage($page = null, $maxResults = 20)
     
 	if ($page) {
         $qb->setFirstResult($maxResults * ($page - 1))->setMaxResults($maxResults);
-        $entities = new Paginator($qb, $fetchJoinCollection = true);
-        // $entities->setUseOutputWalkers(false); // better perfs if big data
+        return new Paginator($qb, $fetchJoinCollection = true);
+        // $paginator->setUseOutputWalkers(false); // better perf if big data
     } else {
-        $entities = $qb->getQuery()->getResult();
+        return $qb->getQuery()->getResult();
     }
-    
-    return $entities;
 }
 ```
 
