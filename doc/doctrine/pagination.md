@@ -31,7 +31,7 @@ public function indexAction($page)
     $maxResults = 20;
     
     $entities = $this->getDoctrine()->getManager()->getRepository('AppBundle:Entity')->findAllByPage($page, $maxResults);
-    $pages = ceil($orders->count() / $maxResults);
+    $pages = ceil($entities->count() / $maxResults);
     
     return $this->render(':Entity:index.html.twig', array(
 		'entities' => $entities,
