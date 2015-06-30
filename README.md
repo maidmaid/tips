@@ -3,6 +3,7 @@
 - PHP
   - [Logical operators](doc/php/logical-operators.md)
 - Symfony
+  - [Command with list of args](doc/symfony/command-array.md)
   - [Access by domain](doc/symfony/access-by-domain.md)
   - [Console bundle](doc/symfony/console-bundle.md)
   - [Form](doc/symfony/form.md)
