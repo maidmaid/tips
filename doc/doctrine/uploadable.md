@@ -55,7 +55,7 @@ class Document
     /**
      * Get web path.
      *
-     * @return null|string
+     * @return string
      */
     public function getWebPath()
     {
