@@ -59,7 +59,7 @@ class Document
      */
     public function getWebPath()
     {
-        return null === $this->fileName ? null : 'uploads/'.$this->fileName;
+        return $this->fileName ? '' : 'uploads/'.$this->fileName;
     }
 }
 ```
