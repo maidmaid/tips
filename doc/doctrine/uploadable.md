@@ -59,7 +59,7 @@ class Document
      */
     public function getWebPath()
     {
-        return $this->fileName ? '' : 'uploads/'.$this->fileName;
+        return $this->fileName ? 'uploads/'.$this->fileName : '';
     }
 }
 ```
@@ -107,6 +107,7 @@ public function editAction(Request $request, Document $document)
 
 public function load(ObjectManager $manager)
 {
+    $uplodableManager = $this->container->get('stof_doctrine_extensions.uploadable.manager');
     //...
     $image = new Document();
 
