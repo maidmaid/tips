@@ -102,6 +102,23 @@ public function editAction(Request $request, Document $document)
     }
     //...
 ```
+```php
+// src/AppBundle/DataFixtures/ORM/LoadData.php
+
+public function load(ObjectManager $manager)
+{
+    //...
+    $image = new Document();
+
+    $path = $faker->image(sys_get_temp_dir(), 500, 500, 'nightlife');
+    $image->file = new UploadedFile($path, $path);
+    $uploadableManager->markEntityToUpload($image, $image->file);
+
+    $article->addImage($image);
+    $manager->persist($article);
+    //...
+}
+```
 
 - [Doc uploadable extension](https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/uploadable.md)
 - [Doc stof doctrine extensions](https://github.com/stof/StofDoctrineExtensionsBundle/blob/master/Resources/doc/index.rst)
