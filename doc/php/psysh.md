@@ -2,7 +2,7 @@ PsySH as a Debugger
 ===================
 
 ```php
-require 'C:/Users/<user>/AppData/Local/Composer/vendor/autoload.php'; // Windows
 require '/home/<user>/.composer/vendor/autoload.php'; // Linux
+require 'C:/Users/<user>/AppData/Roaming/Composer/vendor/autoload.php'; // Windows
 eval(\Psy\sh());
 ```
