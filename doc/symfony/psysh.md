@@ -1,11 +1,18 @@
-Test ajax request
-=================
+Psysh
+=====
+
+Script that debug sf project.
 
 ```php
-public function testAjax()
-{
-    $client = static::createClient();
-    $client->request('GET', '/', array(), array(), array('HTTP_X-Requested-With' => 'XMLHttpRequest');
-    $this->assertTrue($this->client->getResponse()->isSuccessful());
-}
+require_once 'app/bootstrap.php.cache';
+require_once 'app/AppKernel.php';
+
+$k = new \AppKernel('dev', true);
+$k->loadClassCache();
+$k->boot();
+
+$c = $k->getContainer();
+
+$em = $c->get('doctrine')->getManager();
+//
 ```
