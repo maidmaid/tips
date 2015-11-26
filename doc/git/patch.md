@@ -9,7 +9,7 @@ Patch
 $ git remote add upstream git://github.com/symfony/symfony.git
 ```
 
-- **Show remote :**
+- *Show remote :*
 
 ```
 $ git remote -v
