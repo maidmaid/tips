@@ -32,3 +32,5 @@
   - [Center V and H an element](doc/css/center.md)
 - MySQL
   - [Importation](doc/mysql/import.md)
+- Apache
+  - [Add dev virtual host](doc/apache/vhost.md)
