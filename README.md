@@ -28,6 +28,7 @@
   - [Add tag](doc/git/tag.md)
   - [Log](doc/git/log.md)
   - [Diff](doc/git/diff.md)
+  - [Submitting a Patch in PR](doc/git/patch.md)
 - CSS
   - [Center V and H an element](doc/css/center.md)
 - MySQL
