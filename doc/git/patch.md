@@ -6,7 +6,7 @@ Patch
 - Add upstream remote :
 
 ```
-$ git remote add upstream git://github.com/symfony/symfony.git
+$ git remote add upstream https://github.com/symfony/symfony.git
 ```
 
 - *Show remote :*
