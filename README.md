@@ -4,6 +4,7 @@
   - [Logical operators](doc/php/logical-operators.md)
   - [PsySH](doc/php/psysh.md)
   - [XPath query in XML file](doc/php/xpath-xml.md)
+  - [Require vendor/autoload.php in bin php file](doc/php/autoload.md)
 - Symfony
   - [Command with list of args](doc/symfony/command-array.md)
   - [Access by domain](doc/symfony/access-by-domain.md)
