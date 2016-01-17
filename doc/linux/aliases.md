@@ -16,7 +16,7 @@ function tst () {
   cd $dir
   composer require $CR -n
   printf "<?php\n\nrequire 'vendor/autoload.php';\n\n" > index.php
-  pstorm index.php:5
+  pstorm . ./index.php:5
 }
 ```
 
