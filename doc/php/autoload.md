@@ -3,7 +3,10 @@ Require vendor/autoload.php in bin php file
 
 The location of bin php file can be ``bin/my-bin`` or ``vendor/my-vendor/my-package/bin/my-bin``.
 
-```
+```php
+#!/usr/bin/env php
+<?php
+
 require file_exists(__DIR__.'/../vendor/autoload.php')
     ? __DIR__.'/../vendor/autoload.php'
     : __DIR__.'/../../../autoload.php';
