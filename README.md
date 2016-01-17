@@ -37,3 +37,5 @@
   - [Importation](doc/mysql/import.md)
 - Apache
   - [Add dev virtual host](doc/apache/vhost.md)
+- Linux
+  - [Useful aliases](doc/linux/aliases.md)
