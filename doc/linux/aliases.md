@@ -27,3 +27,19 @@ $ CR=guzzlehttp/guzzle tst
 ```
 
 - _CR_ : **C**omposer **R**equire
+
+### Test quickly Symfony
+
+```bash
+function tstsf () {
+  dir=$(mktemp -d)
+  cd $dir
+  symfony new .
+  php bin/symfony_requirements
+  pstorm . \
+    ./app/config/parameters.yml \
+    ./app/config/config.yml \
+    ./app/Resources/views/default/index.html.twig \
+    ./src/AppBundle/Controller/DefaultController.php:16
+}
+```
