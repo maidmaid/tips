@@ -15,6 +15,7 @@
   - [Best practices](doc/symfony/best-practice.md)
   - [Project phases](doc/symfony/project-phase.md)
   - [Debug with Psysh](doc/symfony/psysh.md)
+  - [Serialization](doc/symfony/serializer/serializer.php)
 - Doctrine
   - [Many-To-Many, Unidirectional, with attributes](doc/doctrine/many-to-many.md)
   - [Pagination](doc/doctrine/pagination.md)
