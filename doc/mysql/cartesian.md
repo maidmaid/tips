@@ -94,6 +94,9 @@ class XYRepository extends EntityRepository
 }
 ```
 
+- Doctrine doesn't hydrate entity with null id, it's why I use ``SELECT -x.id`` and next I set null id for each entity that has a negative id.
+- Doctrine consideres as existing an entity that was hydrated, it's why I use ``$em->detach($xy);`` else it's impossible to add this new entities.
+
 ```php
 // src/AppBundle/Controller/XYsController.php
 class XYsController extends Controller
@@ -133,26 +136,16 @@ class XYsController extends Controller
 // src/AppBundle/Form/XYType.php
 class XYType extends AbstractType
 {
-    /**
-     * {@inheritdoc}
-     */
+    /** {@inheritdoc} */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('x', 'hidden', array(
-                'property_path' => 'x.id'
-            ))
-        ;
+        $builder->add('x', 'hidden', array('property_path' => 'x.id'));
     }
 
-    /**
-     * {@inheritdoc}
-     */
+    /** {@inheritdoc} */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\XY'
-        ));
+        $resolver->setDefaults(array('data_class' => 'AppBundle\Entity\XY'));
     }
 }
 ```
