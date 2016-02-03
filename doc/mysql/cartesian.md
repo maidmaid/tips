@@ -20,12 +20,12 @@ SQL:
 ```sql
 SELECT * FROM xy
 UNION
-SELECT NULL as id, x.id, y.id FROM  x, y WHERE (x.id, y.id) NOT IN (SELECT x, y FROM xy)
+SELECT NULL as id, x.id, y.id FROM x, y WHERE (x.id, y.id) NOT IN (SELECT x, y FROM xy)
 ```
 
 3 steps in detail : ``XY* ∪ X×Y**-XY***``
   1. ``SELECT * FROM xy``
-  2. ``UNION SELECT NULL as id, x.id, y.id FROM  x, y``
+  2. ``UNION SELECT NULL as id, x.id, y.id FROM x, y``
   3. ``WHERE (x.id, y.id) NOT IN (SELECT x, y FROM xy)``
 
 ```
@@ -40,4 +40,13 @@ SELECT NULL as id, x.id, y.id FROM  x, y WHERE (x.id, y.id) NOT IN (SELECT x, y 
 |     |     |     |     | NULL|  2  |  9  |     | NULL|  3  |  9  |
 |     |     |     |     | NULL|  3  |  9  |     |     |     |     |
 +-----+-----+-----+     +-----------+-----+     +-----+-----+-----+
+```
+
+If you want filter result for y = 9 :
+
+```sql
+SELECT * FROM xy WHERE xy.y = 9
+UNION
+SELECT NULL as id, x.id, y.id FROM x, y
+  WHERE (x.id, y.id) NOT IN (SELECT x, y FROM xy AND xy.y = 9) AND y.id = 9
 ```
