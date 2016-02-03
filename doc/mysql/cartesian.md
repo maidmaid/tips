@@ -131,7 +131,7 @@ class XYsController extends Controller
 
 ```php
 // src/AppBundle/Form/XYType.php
-class DonationType extends AbstractType
+class XYType extends AbstractType
 {
     /**
      * {@inheritdoc}
