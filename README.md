@@ -26,6 +26,7 @@
 - Bootstrap
   - [Symfony flashbag](doc/bootstrap/flashbag-symfony.md)
   - [Use ajax in popover](doc/bootstrap/use-ajax-in-popover.md)
+  - [Break points](doc/bootstrap/breakpoints.md)
 - Git
   - [Add tracking in existing sources](doc/git/existing-sources.md)
   - [Add tag](doc/git/tag.md)
