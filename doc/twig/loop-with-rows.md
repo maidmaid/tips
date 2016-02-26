@@ -2,16 +2,17 @@ Twig loop with rows
 ===================
 
 ```twig
-{# 4 columns / row for example #}
-{% for product in products %}
-	{% if loop.index0 % 4 == 0 %}
-		<div class="row">
-	{% endif %}
-	
-	<div class="col-md-3">{{ product.name }}</div>
-	
-	{% if loop.index % 4 == 0 %}
-		</div> <!-- end .row -->
-	{% endif %}
+{% set items = ['a', 'b', 'c', 'd', 'e', 'f', 'g'] %}
+
+<table>
+{% for row in items|batch(3, 'No item') %}
+    <tr>
+        {% for column in row %}
+            <td>{{ column }}</td>
+        {% endfor %}
+    </tr>
 {% endfor %}
+</table>
 ```
+
+[link](http://twig.sensiolabs.org/doc/filters/batch.html)
