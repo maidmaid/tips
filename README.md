@@ -16,6 +16,8 @@
   - [Project phases](doc/symfony/project-phase.md)
   - [Debug with Psysh](doc/symfony/psysh.md)
   - [Serialization](doc/symfony/serializer/serializer.php)
+- Blackfire Player
+  - [Run scenarios in Gitlab CI](doc/blackfire-player/ci.md)
 - Doctrine
   - [Many-To-Many, Unidirectional, with attributes](doc/doctrine/many-to-many.md)
   - [Pagination](doc/doctrine/pagination.md)
