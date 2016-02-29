@@ -25,6 +25,7 @@
   - [Uploadable extension](doc/doctrine/uploadable.md)
 - Twig
   - [Loop with rows](doc/twig/loop-with-rows.md)
+  - [Locales in sf app](doc/twig/locales.md)
 - Bootstrap
   - [Symfony flashbag](doc/bootstrap/flashbag-symfony.md)
   - [Use ajax in popover](doc/bootstrap/use-ajax-in-popover.md)
