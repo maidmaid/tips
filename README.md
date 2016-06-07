@@ -17,6 +17,7 @@
   - [Debug with Psysh](doc/symfony/psysh.md)
   - [Serialization](doc/symfony/serializer/serializer.php)
   - [Mailer](doc/symfony/mailer.md)
+  - [Override form](doc/symfony/override-form.md)
 - Blackfire Player
   - [Run scenarios in Gitlab CI](doc/blackfire-player/ci.md)
 - Doctrine
