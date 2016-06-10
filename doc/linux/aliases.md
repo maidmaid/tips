@@ -43,3 +43,9 @@ function tstsf () {
     ./src/AppBundle/Controller/DefaultController.php:16
 }
 ```
+
+### Refresh wifi list 
+
+```
+alias='sudo iwlist wlan0 scan'
+```
