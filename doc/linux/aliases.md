@@ -47,5 +47,5 @@ function tstsf () {
 ### Refresh wifi list 
 
 ```bash
-alias='sudo iwlist wlan0 scan'
+alias wifi='sudo iwlist wlan0 scan'
 ```
