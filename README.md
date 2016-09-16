@@ -1,6 +1,7 @@
 # Tips by maidmaid !
 
 - PHP
+  - [Setup with PHPBrew](doc/php/phpbrew.md)
   - [Logical operators](doc/php/logical-operators.md)
   - [PsySH](doc/php/psysh.md)
   - [XPath query in XML file](doc/php/xpath-xml.md)
