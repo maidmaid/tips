@@ -1,16 +1,10 @@
-Useful aliases
-==============
-
-### Create tmp dir and cd
-
-```bash
+# Create tmp dir and cd
 alias tmp='dir=$(mktemp -d) && cd $dir'
-```
 
+# Refresh wifi list
+alias wifi='sudo iwlist wlan0 scan'
 
-### Test quickly PHP package
-
-```bash
+# Test quickly PHP package
 function tst () {
   dir=$(mktemp -d)
   cd $dir
@@ -18,19 +12,8 @@ function tst () {
   printf "<?php\n\nrequire 'vendor/autoload.php';\n\n" > index.php
   pstorm . ./index.php:5
 }
-```
 
-Usage :
-
-```bash
-$ CR=guzzlehttp/guzzle tst
-```
-
-- _CR_ : **C**omposer **R**equire
-
-### Test quickly Symfony
-
-```bash
+# Test quickly Symfony
 function tstsf () {
   dir=$(mktemp -d)
   cd $dir
@@ -42,10 +25,15 @@ function tstsf () {
     ./app/Resources/views/default/index.html.twig \
     ./src/AppBundle/Controller/DefaultController.php:16
 }
-```
 
-### Refresh wifi list 
+# Add global composer packages
+export PATH=$PATH:~/.composer/vendor/bin
 
-```bash
-alias wifi='sudo iwlist wlan0 scan'
-```
+# Add PHPBrew
+source ~/.phpbrew/bashrc
+
+# Add CFFie alias
+alias cff='cffie query --notify'
+
+# Add liquidprompt bash
+[[ $- = *i* ]] && source ~/Dev/liquidprompt/liquidprompt
