@@ -22,6 +22,8 @@ $ CR=guzzlehttp/guzzle tst
 
 Test quickly Symfony
 $ tstsf
+$ V=3.0 tstsf
+- V : Version of Symfony
 
 Refresh wifi list
 $ wifi
