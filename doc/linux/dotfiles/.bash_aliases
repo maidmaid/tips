@@ -17,14 +17,14 @@ function tst () {
 function tstsf () {
   dir=$(mktemp -d)
   cd $dir
-  symfony new . $v
+  symfony new . $V
   php bin/symfony_requirements
   php bin/console generate:command AppBundle app --no-interaction
   pstorm . \
     ./app/config/parameters.yml \
     ./app/config/config.yml \
     ./app/Resources/views/default/index.html.twig \
-    ./src/AppBundle/Controller/DefaultController.php:16
+    ./src/AppBundle/Controller/DefaultController.php:16 \
     ./src/AppBundle/Command/AppCommand.php:28
 }
 
