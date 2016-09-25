@@ -35,5 +35,21 @@ source ~/.phpbrew/bashrc
 # Add CFFie alias
 alias cff='cffie query --notify'
 
+# Add z command
+source ~/Dev/z/z.sh
+
+# Add cd nav
+alias ..='cd ..'
+alias cd..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# Add Git alias
+alias g="git"
+
+# Add Vim alias
+alias v="vim"
+
 # Add liquidprompt bash
 [[ $- = *i* ]] && source ~/Dev/liquidprompt/liquidprompt
