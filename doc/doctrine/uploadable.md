@@ -75,15 +75,17 @@ class Document
 ```php
 // src/AppBundle/Form/DocumentType.php 
 
- public function buildForm(FormBuilderInterface $builder, array $options)
- {
-      $builder
-          ->add('file', \Symfony\Component\Form\Extension\Core\Type\FileType::class, array(
-              'data_class' => null,
-              'required' => false,
-          ))
-      ;
- }
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+
+public function buildForm(FormBuilderInterface $builder, array $options)
+{
+    $builder
+        ->add('file', FileType::class, array(
+            'data_class' => null,
+            'required' => false,
+        ))
+    ;
+}
 ```
 
 ```php
