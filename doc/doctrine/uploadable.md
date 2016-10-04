@@ -78,7 +78,7 @@ class Document
  public function buildForm(FormBuilderInterface $builder, array $options)
  {
       $builder
-          ->add('file', 'file', array(
+          ->add('file', \Symfony\Component\Form\Extension\Core\Type\FileType::class, array(
               'data_class' => null,
               'required' => false,
           ))
