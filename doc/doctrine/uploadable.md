@@ -9,7 +9,7 @@ stof_doctrine_extensions:
         default:
             uploadable: true
     uploadable:
-        default_file_path: %kernel.root_dir%/../web/uploads
+        default_file_path: "%kernel.root_dir%/../web/uploads"
 ```
 
 ```php
