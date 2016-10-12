@@ -96,13 +96,13 @@ public function editAction(Request $request, Document $document)
     //...
     if ($editForm->isValid()) {
         $uploadableManager = $this->container->get('stof_doctrine_extensions.uploadable.manager');
-            if ($document->file instanceof UploadedFile) {
-                $uploadableManager->markEntityToUpload($document, $document->file);
-            }
+        if ($document->file instanceof UploadedFile) {
+            $uploadableManager->markEntityToUpload($document, $document->file);
         }
         //...
     }
     //...
+}
 ```
 ```php
 // src/AppBundle/DataFixtures/ORM/LoadData.php
