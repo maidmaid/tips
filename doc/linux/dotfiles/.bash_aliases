@@ -55,3 +55,9 @@ alias v="vim"
 
 # Add liquidprompt bash
 [[ $- = *i* ]] && source ~/Dev/liquidprompt/liquidprompt
+
+# Add PHPBrew bash
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+
+# PhpStorm
+alias pstorm="phpstorm"
