@@ -2,11 +2,12 @@
 echo "link dot files in home dir. hit ctrl-c NOW"
 read -n 1
 
-ln -fs "$(pwd)/.bash_aliases" ~/.bash_aliases
-ln -fs "$(pwd)/.gitattributes" ~/.gitattributes
-ln -fs "$(pwd)/.gitconfig" ~/.gitconfig
-ln -fs "$(pwd)/.gitconfig.local" ~/.gitconfig.local
-ln -fs "$(pwd)/.gitignore" ~/.gitignore
+ln -fsv "$(pwd)/.bash_aliases" ~/.bash_aliases
+ln -fsv "$(pwd)/.gitattributes" ~/.gitattributes
+ln -fsv "$(pwd)/.gitconfig" ~/.gitconfig
+ln -fsv "$(pwd)/.gitconfig.local" ~/.gitconfig.local
+ln -fsv "$(pwd)/.gitignore" ~/.gitignore
+. ~/.bashrc
 
 echo "install deps. hit ctrl-c NOW"
 read -n 1

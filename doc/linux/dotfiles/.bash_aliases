@@ -8,8 +8,14 @@ alias wifi='sudo iwlist wlan0 scan'
 function tst () {
   dir=$(mktemp -d)
   cd $dir
-  composer require $CR -n
-  printf "<?php\n\nrequire 'vendor/autoload.php';\n\n" > index.php
+  composer require symfony/var-dumper $CR -n
+  printf "<?php\n\nrequire 'vendor/autoload.php';\n\ndump('ok');\n" > index.php
+  php index.php
+  git init
+  echo /vendor/ > .gitignore
+  echo /.idea/ >> .gitignore
+  git add .
+  git commit -m "Add index.php"
   phpstorm . ./index.php:5
 }
 
@@ -20,6 +26,10 @@ function tstsf () {
   symfony new . $V
   php bin/symfony_requirements
   php bin/console generate:command AppBundle app --no-interaction
+  git init
+  echo /.idea/ >> .gitignore
+  git add .
+  git commit -m "Import Symfony project"
   phpstorm . \
     ./app/config/parameters.yml \
     ./app/config/config.yml \
