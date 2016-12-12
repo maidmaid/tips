@@ -10,7 +10,7 @@ function tst () {
   cd $dir
   composer require $CR -n
   printf "<?php\n\nrequire 'vendor/autoload.php';\n\n" > index.php
-  pstorm . ./index.php:5
+  phpstorm . ./index.php:5
 }
 
 # Test quickly Symfony
@@ -20,7 +20,7 @@ function tstsf () {
   symfony new . $V
   php bin/symfony_requirements
   php bin/console generate:command AppBundle app --no-interaction
-  pstorm . \
+  phpstorm . \
     ./app/config/parameters.yml \
     ./app/config/config.yml \
     ./app/Resources/views/default/index.html.twig \
