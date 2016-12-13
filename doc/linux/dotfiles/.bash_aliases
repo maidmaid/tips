@@ -24,12 +24,13 @@ function tstsf () {
   dir=$(mktemp -d)
   cd $dir
   symfony new . $V
-  php bin/symfony_requirements
-  php bin/console generate:command AppBundle app --no-interaction
-  git init
+  php bin/console generate:command AppBundle app --no-interaction --quiet
+  php bin/console server:start --force --quiet
+  git init --quiet
   echo /.idea/ >> .gitignore
   git add .
-  git commit -m "Import Symfony project"
+  git commit -m "Import Symfony project" --quiet
+  google-chrome 127.0.0.1:8000 > /dev/null 2>&1
   phpstorm . \
     ./app/config/parameters.yml \
     ./app/config/config.yml \
