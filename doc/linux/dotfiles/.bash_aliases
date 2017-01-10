@@ -72,3 +72,6 @@ alias v="vim"
 
 # PhpStorm
 alias pstorm="phpstorm"
+
+# Psysh-sf
+alias psysh-sf='php ~/Dev/tips/doc/php/psysh-sf.php'
