@@ -15,7 +15,6 @@
   - [Test ajax request](doc/symfony/test-ajax.md)
   - [Best practices](doc/symfony/best-practice.md)
   - [Project phases](doc/symfony/project-phase.md)
-  - [Debug with Psysh](doc/symfony/psysh.md)
   - [Serialization](doc/symfony/serializer/serializer.php)
   - [Mailer](doc/symfony/mailer.md)
   - [Override form](doc/symfony/override-form.md)
