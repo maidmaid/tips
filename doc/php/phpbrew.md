@@ -3,7 +3,7 @@ Setup with PHPBrew
 
 ```
 # install
-phpbrew update && phpbrew install 7.0 +default+mb+mysql+pdo+debug+intl+iconv
+phpbrew update && phpbrew install 7.1 +default+mb+mysql+pdo+sqlite+debug+intl+iconv
 # list with variants
 phpbrew list -v
 ```
