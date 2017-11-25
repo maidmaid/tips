@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Create tmp dir and cd
 alias tmp='dir=$(mktemp -d) && cd $dir'
 
@@ -8,7 +10,7 @@ alias wifi='sudo iwlist wlan0 scan'
 function tst () {
   dir=$(mktemp -d)
   cd $dir
-  composer require symfony/var-dumper $CR -n
+  composer require symfony/var-dumper $P -n
   printf "<?php\n\nrequire 'vendor/autoload.php';\n\ndump('ok');\n" > index.php
   php index.php
   git init
@@ -23,20 +25,19 @@ function tst () {
 function tstsf () {
   dir=$(mktemp -d)
   cd $dir
-  symfony new . $V
-  php bin/console generate:command AppBundle app --no-interaction --quiet
-  php bin/console server:start --force --quiet
+  composer create-project symfony/skeleton . $V
+  composer require log server var-dumper annotations maker:dev-master $P -n
+  php bin/console make:command app
+  php bin/console make:controller AppController
+  php bin/console server:start
+  # php bin/console server:log
   git init --quiet
   echo /.idea/ >> .gitignore
   git add .
   git commit -m "Import Symfony project" --quiet
-  google-chrome 127.0.0.1:8000 > /dev/null 2>&1
-  phpstorm . \
-    ./app/config/parameters.yml \
-    ./app/config/config.yml \
-    ./app/Resources/views/default/index.html.twig \
-    ./src/AppBundle/Controller/DefaultController.php:16 \
-    ./src/AppBundle/Command/AppCommand.php:28
+  pstorm . \
+    ./src/Controller/AppController.php:16 \
+    ./src/Command/AppCommand.php:28
 }
 
 # Add global composer packages
@@ -47,6 +48,7 @@ source ~/.phpbrew/bashrc
 
 # Add CFFie alias
 alias cff='cffie query --notify'
+alias cffw='watch -ctn 30 cffie query --ansi'
 
 # Add z command
 source ~/Dev/z/z.sh
@@ -64,14 +66,8 @@ alias g="git"
 # Add Vim alias
 alias v="vim"
 
-# Add liquidprompt bash
-[[ $- = *i* ]] && source ~/Dev/liquidprompt/liquidprompt
-
 # Add PHPBrew bash
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-
-# PhpStorm
-alias pstorm="phpstorm"
 
 # Psysh-sf
 alias psysh-sf='php ~/Dev/tips/doc/php/psysh-sf.php'
