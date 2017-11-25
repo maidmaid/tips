@@ -13,12 +13,12 @@ function tst () {
   composer require symfony/var-dumper $P -n
   printf "<?php\n\nrequire 'vendor/autoload.php';\n\ndump('ok');\n" > index.php
   php index.php
-  git init
+  git init --quiet
   echo /vendor/ > .gitignore
   echo /.idea/ >> .gitignore
   git add .
-  git commit -m "Add index.php"
-  phpstorm . ./index.php:5
+  git commit -m "Add index.php" --quiet
+  pstorm . ./index.php:5
 }
 
 # Test quickly Symfony
