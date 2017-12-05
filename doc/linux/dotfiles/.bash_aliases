@@ -26,11 +26,10 @@ function tstsf () {
   dir=$(mktemp -d)
   cd $dir
   composer create-project symfony/skeleton . $V
-  composer require log server var-dumper annotations maker:dev-master $P -n
-  php bin/console make:command app
-  php bin/console make:controller AppController
+  composer require server var-dumper annotations maker $P -n
+  php bin/console make:command app -q
+  php bin/console make:controller AppController -q
   php bin/console server:start
-  # php bin/console server:log
   git init --quiet
   echo /.idea/ >> .gitignore
   git add .
@@ -38,6 +37,10 @@ function tstsf () {
   pstorm . \
     ./src/Controller/AppController.php:16 \
     ./src/Command/AppCommand.php:28
+}
+
+function newsf {
+  composer create-project symfony/skeleton . $V
 }
 
 # Add global composer packages
